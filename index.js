@@ -4,7 +4,7 @@ const path = require("path")
 const dirPath = path.join(__dirname, "timeStamp");
 
 const app = express()
-app.get("/timestamp", (req, res) => {
+app.get("/", (req, res) => {
     let date = new Date();
     const timeStampDate = date.toUTCString().slice(0, -3);
     fs.writeFileSync(`${path.join(dirPath, "current date-time.txt")}`, timeStampDate, (err) => {
